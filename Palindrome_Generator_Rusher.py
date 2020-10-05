@@ -36,13 +36,12 @@ def palindrome_generator():
         
         i = 1 # recursive value used in for loop below
 
-        print(round(l/2)-1)
         middle = [dna_list[round(l/2)-1]] # sequence of an odd numbered length will have a center nucleotide, this will be put that value into it's own array - I will use the round(len()) method so I can use this value as an index when iterating through the array
         left_side =[] # creating an empty array for the left side and right side to store values as we iterate through the dna_list
         right_side =[] # see comment above
 
         try: # try block which will catch any index errors
-            for base in range(1,(round(l/2))): #this loop will iterate across the dna_list equal to half of the length of the list
+            for base in range(0,(round(l/2))): #this loop will iterate across the dna_list equal to half of the length of the list
             
                 if dna_list[round(l/2)-1-i] == dna_list[round(l/2)-1+i]: # evaluating the elements at the postitions center - 1 and the center + 1 to see if they're the same. If they are then that base is added to the left and right arrays
                     left_side.insert(0,(dna_list[round(l/2)-1-i])) # .insert() will add elements to the beginning of the array, so the last element to be added to the left side will be at index 0 (the '- i' at the end indicates this will elvaluate to the left of the middle value)
